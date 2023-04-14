@@ -206,7 +206,7 @@ html {
 .App {
   padding: 2em;
   display: flex;
-  align-items: center;
+  align-items: start;
   justify-content: center;
   gap: 1em;
 }
@@ -217,6 +217,13 @@ html {
   text-align: start;
   width: 100%;
   gap: 3em;
+}
+
+.button__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .titulo {
