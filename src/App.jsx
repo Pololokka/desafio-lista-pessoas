@@ -8,8 +8,17 @@ import { useState } from "react";
 function App() {
   const [pplSort, setPplSort] = useState(Pessoas);
 
-  const handleOnClick = () => {
+  const handleSortReset = () => {
+    setPplSort(Pessoas);
+  };
+
+  const handleAlpha = () => {
     const sortedArray = [...pplSort].sort((a, b) => (a.name > b.name ? 1 : -1));
+    setPplSort(sortedArray);
+  };
+
+  const handleReverseAlpha = () => {
+    const sortedArray = [...pplSort].sort((a, b) => (a.name < b.name ? 1 : -1));
     setPplSort(sortedArray);
   };
 
@@ -33,25 +42,22 @@ function App() {
         <section className="button__container">
           <h2 className="subtitulo subtitulo-hover">Ordenar</h2>
           <Button
-            value="filtro 1"
+            value="Exibição Padrão"
+            name="resetSort"
+            handleOnClick={handleSortReset}
+          />
+          <Button
+            value="Crescente - Nome"
             name="filtro1"
-            handleOnClick={handleOnClick}
+            handleOnClick={handleAlpha}
           />
           <Button
-            value="filtro 2"
+            value="Decrescente - Nome"
             name="filtro2"
-            handleOnClick={handleOnClick}
+            handleOnClick={handleReverseAlpha}
           />
-          <Button
-            value="filtro 3"
-            name="filtro3"
-            handleOnClick={handleOnClick}
-          />
-          <Button
-            value="filtro 4"
-            name="filtro4"
-            handleOnClick={handleOnClick}
-          />
+          <Button value="filtro 3" name="filtro3" handleOnClick={handleAlpha} />
+          <Button value="filtro 4" name="filtro4" handleOnClick={handleAlpha} />
         </section>
       </main>
     </>
