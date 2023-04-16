@@ -22,6 +22,20 @@ function App() {
     setPplSort(sortedArray);
   };
 
+  const handleNumeric = () => {
+    const sortedArray = [...pplSort].sort((a, b) =>
+      a.idade > b.idade ? 1 : -1
+    );
+    setPplSort(sortedArray);
+  };
+
+  const handleReverseNumeric = () => {
+    const sortedArray = [...pplSort].sort((a, b) =>
+      a.idade < b.idade ? 1 : -1
+    );
+    setPplSort(sortedArray);
+  };
+
   return (
     <>
       <header>
@@ -56,8 +70,16 @@ function App() {
             name="filtro2"
             handleOnClick={handleReverseAlpha}
           />
-          <Button value="filtro 3" name="filtro3" handleOnClick={handleAlpha} />
-          <Button value="filtro 4" name="filtro4" handleOnClick={handleAlpha} />
+          <Button
+            value="Crescente - Idade"
+            name="filtro3"
+            handleOnClick={handleNumeric}
+          />
+          <Button
+            value="Decrescente - Idade"
+            name="filtro4"
+            handleOnClick={handleReverseNumeric}
+          />
         </section>
       </main>
     </>
