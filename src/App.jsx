@@ -23,15 +23,27 @@ function App() {
   };
 
   const handleNumeric = () => {
-    const sortedArray = [...pplSort].sort((a, b) =>
-      a.idade > b.idade ? 1 : -1
+    let sortedArray = [...pplSort].sort((a, b) =>
+      a.idade > b.idade
+        ? 1
+        : a.idade == b.idade
+        ? a.name > b.name
+          ? 1
+          : -1
+        : -1
     );
     setPplSort(sortedArray);
   };
 
   const handleReverseNumeric = () => {
-    const sortedArray = [...pplSort].sort((a, b) =>
-      a.idade < b.idade ? 1 : -1
+    let sortedArray = [...pplSort].sort((a, b) =>
+      a.idade < b.idade
+        ? 1
+        : a.idade == b.idade
+        ? a.name < b.name
+          ? 1
+          : -1
+        : -1
     );
     setPplSort(sortedArray);
   };
