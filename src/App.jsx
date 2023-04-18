@@ -1,52 +1,19 @@
 import "./App.css";
 
 import { Pessoas } from "./Data/db";
+import { useState } from "react";
+import {
+  handleSortReset,
+  handleAlpha,
+  handleReverseAlpha,
+  handleNumeric,
+  handleReverseNumeric,
+} from "./Functions/sort";
 
 import Button from "./Components/Button/Index";
-import { useState } from "react";
 
 function App() {
   const [pplSort, setPplSort] = useState(Pessoas);
-
-  const handleSortReset = () => {
-    setPplSort(Pessoas);
-  };
-
-  const handleAlpha = () => {
-    const sortedArray = [...pplSort].sort((a, b) => (a.name > b.name ? 1 : -1));
-    setPplSort(sortedArray);
-  };
-
-  const handleReverseAlpha = () => {
-    const sortedArray = [...pplSort].sort((a, b) => (a.name < b.name ? 1 : -1));
-    setPplSort(sortedArray);
-  };
-
-  const handleNumeric = () => {
-    let sortedArray = [...pplSort].sort((a, b) =>
-      a.idade > b.idade
-        ? 1
-        : a.idade == b.idade
-        ? a.name > b.name
-          ? 1
-          : -1
-        : -1
-    );
-    setPplSort(sortedArray);
-  };
-
-  const handleReverseNumeric = () => {
-    let sortedArray = [...pplSort].sort((a, b) =>
-      a.idade < b.idade
-        ? 1
-        : a.idade == b.idade
-        ? a.name < b.name
-          ? 1
-          : -1
-        : -1
-    );
-    setPplSort(sortedArray);
-  };
 
   return (
     <>
@@ -70,27 +37,27 @@ function App() {
           <Button
             value="Exibição Padrão"
             name="resetSort"
-            handleOnClick={handleSortReset}
+            handleOnClick={() => handleSortReset(setPplSort, Pessoas)}
           />
           <Button
             value="Crescente - Nome"
             name="filtro1"
-            handleOnClick={handleAlpha}
+            handleOnClick={() => handleAlpha(pplSort, setPplSort)}
           />
           <Button
             value="Decrescente - Nome"
             name="filtro2"
-            handleOnClick={handleReverseAlpha}
+            handleOnClick={() => handleReverseAlpha(pplSort, setPplSort)}
           />
           <Button
             value="Crescente - Idade"
             name="filtro3"
-            handleOnClick={handleNumeric}
+            handleOnClick={() => handleNumeric(pplSort, setPplSort)}
           />
           <Button
             value="Decrescente - Idade"
             name="filtro4"
-            handleOnClick={handleReverseNumeric}
+            handleOnClick={() => handleReverseNumeric(pplSort, setPplSort)}
           />
         </section>
       </main>
