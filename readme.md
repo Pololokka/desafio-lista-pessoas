@@ -1,8 +1,8 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) ![technology - React](https://img.shields.io/badge/React-orange) ![technology - JS](https://img.shields.io/badge/JavaScript-yellow)
 
-# Link Tree
+# Lista de Pessoas
 
-link tree
+Página onde o usuário pode organizar uma lista de pessoas
 
 ## Tecnologias
 
@@ -15,7 +15,9 @@ link tree
 
 ### Home
 
-Página onde o usuário pode adicionar seus links
+Página onde a lista de pessoas é exibida, assim como os botões que indicam como a lista será exibida. Um usuário pode exibir a lista por ordem alfabética ou por idade, tanto de maneira crescente quanto descrescente. Além disso é possível retornar a lista para a exibição padrão.
+
+Na exibição de idade, quando duas pessoas tem a mesma idade, o desempate é feito de acordo com o nome.
 
 ## Sobre
 
