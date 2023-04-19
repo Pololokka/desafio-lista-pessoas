@@ -19,6 +19,37 @@ function App() {
     <>
       <header>
         <h1 className="titulo titulo-hover">Lista de Pessoas</h1>
+
+        <section>
+          <h2 className="subtitulo subtitulo-hover">Ordenar</h2>
+          <div className="button__container-header">
+            <Button
+              value="Exibição Padrão"
+              name="resetSort"
+              handleOnClick={() => handleSortReset(setPplSort, Pessoas)}
+            />
+            <Button
+              value="Crescente - Nome"
+              name="filtro1"
+              handleOnClick={() => handleAlpha(pplSort, setPplSort)}
+            />
+            <Button
+              value="Decrescente - Nome"
+              name="filtro2"
+              handleOnClick={() => handleReverseAlpha(pplSort, setPplSort)}
+            />
+            <Button
+              value="Crescente - Idade"
+              name="filtro3"
+              handleOnClick={() => handleNumeric(pplSort, setPplSort)}
+            />
+            <Button
+              value="Decrescente - Idade"
+              name="filtro4"
+              handleOnClick={() => handleReverseNumeric(pplSort, setPplSort)}
+            />
+          </div>
+        </section>
       </header>
       <main className="App">
         <section>
@@ -32,7 +63,7 @@ function App() {
             ))}
           </ul>
         </section>
-        <section className="button__container">
+        <section className="button__container-main">
           <h2 className="subtitulo subtitulo-hover">Ordenar</h2>
           <Button
             value="Exibição Padrão"

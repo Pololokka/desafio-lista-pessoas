@@ -219,11 +219,15 @@ html {
   gap: 3em;
 }
 
-.button__container {
+.button__container-main {
   display: grid;
   grid-template-columns: 1fr;
   justify-content: center;
   align-items: center;
+}
+
+.button__container-header {
+  display: none;
 }
 
 .titulo {
@@ -298,4 +302,25 @@ html {
   width: 50%;
   margin: 0.5em;
   width: 100%;
+}
+
+@media (max-width: 950px) {
+  .person__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+    width: 100%;
+    gap: 1em;
+  }
+
+  .button__container-main {
+    display: none;
+  }
+
+  .button__container-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 }
