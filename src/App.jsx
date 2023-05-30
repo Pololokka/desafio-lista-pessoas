@@ -29,12 +29,12 @@ function App() {
               handleOnClick={() => handleSortReset(setPplSort, Pessoas)}
             />
             <Button
-              value="Crescente - Nome"
+              value="Alfabética"
               name="filtro1"
               handleOnClick={() => handleAlpha(pplSort, setPplSort)}
             />
             <Button
-              value="Decrescente - Nome"
+              value="Contra Alfabética"
               name="filtro2"
               handleOnClick={() => handleReverseAlpha(pplSort, setPplSort)}
             />
